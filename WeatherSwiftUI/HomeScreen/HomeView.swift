@@ -20,10 +20,9 @@ struct HomeView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 VStack {
                     if let weather = homeViewModel.weather {
-                        Spacer()
                         TopView(weather: weather)
                         MiddleView(forecast: weather.forecast)
-                        Spacer()
+                        BottomView(current: weather.current)
                     } else {
                         LoadingView()
                     }

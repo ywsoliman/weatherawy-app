@@ -9,20 +9,26 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var homeViewModel = HomeViewModel(service: APIService.shared)
+    @ObservedObject private var homeViewModel = HomeViewModel(service: APIService.shared)
     
     var body: some View {
-        ZStack {
-            Image(.day)
-                .resizable()
-                .scaledToFill()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-            VStack {
-                if let weather = homeViewModel.weather {
-                    TopView(weather: weather)
-                } else {
-                    LoadingView()
+        NavigationView {
+            ZStack {
+                Image(.day)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                VStack {
+                    if let weather = homeViewModel.weather {
+                        Spacer()
+                        TopView(weather: weather)
+                        MiddleView(forecast: weather.forecast)
+                        Spacer()
+                    } else {
+                        LoadingView()
+                    }
                 }
+                .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
             }
         }
         .onAppear { homeViewModel.fetchWeather() }

@@ -20,6 +20,10 @@
 		BEBEC49E2BF8E06700C3AC96 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEC49D2BF8E06700C3AC96 /* APIServiceProtocol.swift */; };
 		BEBEC4A02BF8E09B00C3AC96 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEC49F2BF8E09B00C3AC96 /* HomeViewModel.swift */; };
 		BEBEC4A22BF8F16200C3AC96 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEC4A12BF8F16200C3AC96 /* LoadingView.swift */; };
+		BEBEC4A42BF8FEA000C3AC96 /* MiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEC4A32BF8FEA000C3AC96 /* MiddleView.swift */; };
+		BEBEC4A62BF8FEB800C3AC96 /* ForecastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEC4A52BF8FEB800C3AC96 /* ForecastRow.swift */; };
+		BEBEC4A82BF9047000C3AC96 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEC4A72BF9047000C3AC96 /* DateUtil.swift */; };
+		BEBEC4AA2BF912FB00C3AC96 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEC4A92BF912FB00C3AC96 /* TemperatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		BEBEC49D2BF8E06700C3AC96 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		BEBEC49F2BF8E09B00C3AC96 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BEBEC4A12BF8F16200C3AC96 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		BEBEC4A32BF8FEA000C3AC96 /* MiddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleView.swift; sourceTree = "<group>"; };
+		BEBEC4A52BF8FEB800C3AC96 /* ForecastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRow.swift; sourceTree = "<group>"; };
+		BEBEC4A72BF9047000C3AC96 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		BEBEC4A92BF912FB00C3AC96 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,7 @@
 		BE9237522BF8C7D500149311 /* TemperatureScreen */ = {
 			isa = PBXGroup;
 			children = (
+				BEBEC4A92BF912FB00C3AC96 /* TemperatureView.swift */,
 			);
 			path = TemperatureScreen;
 			sourceTree = "<group>";
@@ -142,6 +151,8 @@
 		BE9237562BF8CA1B00149311 /* Middle */ = {
 			isa = PBXGroup;
 			children = (
+				BEBEC4A32BF8FEA000C3AC96 /* MiddleView.swift */,
+				BEBEC4A52BF8FEB800C3AC96 /* ForecastRow.swift */,
 			);
 			path = Middle;
 			sourceTree = "<group>";
@@ -158,6 +169,7 @@
 			children = (
 				BE92375B2BF8CF2F00149311 /* Constants.swift */,
 				BEBEC4A12BF8F16200C3AC96 /* LoadingView.swift */,
+				BEBEC4A72BF9047000C3AC96 /* DateUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -293,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEBEC4AA2BF912FB00C3AC96 /* TemperatureView.swift in Sources */,
 				BEBEC49E2BF8E06700C3AC96 /* APIServiceProtocol.swift in Sources */,
 				BEBEC4A02BF8E09B00C3AC96 /* HomeViewModel.swift in Sources */,
 				BE92375C2BF8CF2F00149311 /* Constants.swift in Sources */,
@@ -301,8 +314,11 @@
 				BE91FB9C2BF8D8DA00AB511A /* Weather.swift in Sources */,
 				BE9237592BF8CA7D00149311 /* HomeView.swift in Sources */,
 				BE9237542BF8C81200149311 /* TopView.swift in Sources */,
+				BEBEC4A42BF8FEA000C3AC96 /* MiddleView.swift in Sources */,
 				BE9237602BF8D7E600149311 /* APIService.swift in Sources */,
+				BEBEC4A82BF9047000C3AC96 /* DateUtil.swift in Sources */,
 				BE9237442BF8C5E000149311 /* WeatherSwiftUIApp.swift in Sources */,
+				BEBEC4A62BF8FEB800C3AC96 /* ForecastRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

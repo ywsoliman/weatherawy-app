@@ -44,9 +44,14 @@ struct Forecast: Codable {
 
 // MARK: - Forecastday
 struct ForecastDay: Codable {
-    var date: String
+    var dateEpoch: TimeInterval
     var day: Day
     var hour: [Hour]
+    
+    enum CodingKeys: String, CodingKey {
+        case dateEpoch = "date_epoch"
+        case day, hour
+    }
 }
 
 // MARK: - Day
@@ -109,8 +114,8 @@ let hours = [hour1, hour2]
 let day = Day(maxtemp: 25.0, mintemp: 18.0, avgtemp: 21.5, condition: condition)
 
 // Sample data for ForecastDay
-let forecastDay = ForecastDay(date: "2024-05-18", day: day, hour: hours)
-let forecastDays = [forecastDay]
+let forecastDay = ForecastDay(dateEpoch: 1715990400, day: day, hour: hours)
+let forecastDays = [forecastDay, forecastDay, forecastDay]
 
 // Sample data for Forecast
 let forecast = Forecast(forecastday: forecastDays)

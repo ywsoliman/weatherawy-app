@@ -10,6 +10,6 @@ import Foundation
 struct Constants {
     
     static let API_KEY = "4a4ad0d455f14d19bd8115817241805"
-    static let BASE_URL = "http://api.weatherapi.com/v1/forecast.json"
+    static let BASE_URL = "https://api.weatherapi.com/v1/forecast.json"
     
 }

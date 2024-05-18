@@ -15,6 +15,8 @@ struct MiddleView: View {
         VStack(alignment: .leading) {
             Text("3-DAY FORECAST")
                 .bold()
+            Divider()
+                .background(Color.black)
             ForEach(forecast.forecastday, id: \.dateEpoch) { day in
                 NavigationLink(destination: TemperatureView()) {
                     ForecastRow(currentForecast: day)

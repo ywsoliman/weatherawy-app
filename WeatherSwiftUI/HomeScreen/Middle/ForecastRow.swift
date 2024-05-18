@@ -21,16 +21,20 @@ struct ForecastRow: View {
     }
     
     var body: some View {
-        HStack {
-            Text(dayOfWeek(from: currentForecast.dateEpoch))
-            Spacer()
-            if let conditionIconURL {
-                KFImage(conditionIconURL)
+        VStack {
+            HStack {
+                Text(dayOfWeek(from: currentForecast.dateEpoch))
+                Spacer()
+                if let conditionIconURL {
+                    KFImage(conditionIconURL)
+                }
+                Spacer()
+                Text(minAndMaxTemp)
+                Spacer()
+                Image(systemName: "chevron.right")
             }
-            Spacer()
-            Text(minAndMaxTemp)
-            Spacer()
-            Image(systemName: "chevron.right")
+            Divider()
+                .background(Color.black)
         }
     }
 }

@@ -30,7 +30,7 @@ struct HomeView: View {
                 .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
             }
         }
-        .onAppear { homeViewModel.fetchWeather() }
+        .onAppear { homeViewModel.checkIfLocationEnabled() }
         .ignoresSafeArea()
     }
 }

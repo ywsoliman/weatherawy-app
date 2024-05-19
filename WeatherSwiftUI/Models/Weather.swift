@@ -69,14 +69,15 @@ struct Day: Codable {
 
 // MARK: - Hour
 struct Hour: Codable {
+    var epoch: TimeInterval
     var time: String
     var temp: Double
     var condition: Condition
 
     enum CodingKeys: String, CodingKey {
-        case time
+        case epoch = "time_epoch"
         case temp = "temp_c"
-        case condition
+        case time, condition
     }
 }
 
@@ -106,9 +107,12 @@ let current = Current(
 )
 
 // Sample data for Hour
-let hour1 = Hour(time: "2024-05-18 01:00", temp: 20.0, condition: condition)
-let hour2 = Hour(time: "2024-05-18 02:00", temp: 19.0, condition: condition)
-let hours = [hour1, hour2]
+let hour1 = Hour(epoch: 1716080400, time: "2024-05-18 01:00", temp: 20.0, condition: condition)
+let hour2 = Hour(epoch: 1716080400, time: "2024-05-18 02:00", temp: 19.0, condition: condition)
+let hour3 = Hour(epoch: 1716080400, time: "2024-05-18 03:00", temp: 29.0, condition: condition)
+let hour4 = Hour(epoch: 1716080400, time: "2024-05-18 04:00", temp: 15.0, condition: condition)
+let hour5 = Hour(epoch: 1716080400, time: "2024-05-18 05:00", temp: 13.0, condition: condition)
+let hours = [hour1, hour2, hour3, hour4, hour5]
 
 // Sample data for Day
 let day = Day(maxtemp: 25.0, mintemp: 18.0, avgtemp: 21.5, condition: condition)

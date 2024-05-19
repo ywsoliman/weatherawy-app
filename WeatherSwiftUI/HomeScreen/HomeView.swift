@@ -17,7 +17,6 @@ struct HomeView: View {
                 Image(.day)
                     .resizable()
                     .scaledToFill()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 VStack {
                     if let weather = homeViewModel.weather {
                         TopView(weather: weather)

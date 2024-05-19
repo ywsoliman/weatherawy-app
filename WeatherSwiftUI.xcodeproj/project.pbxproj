@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D8F2B828AB202C343E795BE /* Pods_WeatherSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C0469779FE65C40F35FB5F /* Pods_WeatherSwiftUI.framework */; };
+		BE3578E92BFA2C4F00402F27 /* TemperatureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3578E82BFA2C4F00402F27 /* TemperatureRow.swift */; };
 		BE91FB9C2BF8D8DA00AB511A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE91FB9B2BF8D8DA00AB511A /* Weather.swift */; };
 		BE9237442BF8C5E000149311 /* WeatherSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9237432BF8C5E000149311 /* WeatherSwiftUIApp.swift */; };
 		BE9237462BF8C5E000149311 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9237452BF8C5E000149311 /* ContentView.swift */; };
@@ -31,6 +32,7 @@
 		42C0469779FE65C40F35FB5F /* Pods_WeatherSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B64C8FE73342710942E1BC2 /* Pods-WeatherSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherSwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-WeatherSwiftUI/Pods-WeatherSwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		990553E60F14522E168F49CA /* Pods-WeatherSwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherSwiftUI.release.xcconfig"; path = "Target Support Files/Pods-WeatherSwiftUI/Pods-WeatherSwiftUI.release.xcconfig"; sourceTree = "<group>"; };
+		BE3578E82BFA2C4F00402F27 /* TemperatureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureRow.swift; sourceTree = "<group>"; };
 		BE91FB9B2BF8D8DA00AB511A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		BE9237402BF8C5E000149311 /* WeatherSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9237432BF8C5E000149311 /* WeatherSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSwiftUIApp.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				BEBEC4A92BF912FB00C3AC96 /* TemperatureView.swift */,
+				BE3578E82BFA2C4F00402F27 /* TemperatureRow.swift */,
 			);
 			path = TemperatureScreen;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				BEBEC4A02BF8E09B00C3AC96 /* HomeViewModel.swift in Sources */,
 				BE92375C2BF8CF2F00149311 /* Constants.swift in Sources */,
 				BEBEC4A22BF8F16200C3AC96 /* LoadingView.swift in Sources */,
+				BE3578E92BFA2C4F00402F27 /* TemperatureRow.swift in Sources */,
 				BE9237462BF8C5E000149311 /* ContentView.swift in Sources */,
 				BE91FB9C2BF8D8DA00AB511A /* Weather.swift in Sources */,
 				BE9237592BF8CA7D00149311 /* HomeView.swift in Sources */,

@@ -13,6 +13,7 @@ struct MiddleView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            
             Text("3-DAY FORECAST")
                 .bold()
             Divider()
@@ -20,12 +21,18 @@ struct MiddleView: View {
             ForEach(Array(forecast.forecastday.enumerated()), id: \.element.dateEpoch) { index, day in
                 
                 let label = (index == 0) ? "Today" : dayOfWeek(from: day.dateEpoch)
-                
-                NavigationLink(destination: TemperatureView()) {
+                let hours: [Hour] = (index == 0) ? removePassedHours(day) : day.hour
+                NavigationLink(destination: TemperatureView(hours: hours)) {
                     ForecastRow(currentForecast: day, dayLabel: label)
                 }
                 .buttonStyle(PlainButtonStyle())
             }
+        }
+    }
+    
+    func removePassedHours(_ day: ForecastDay) -> [Hour] {
+        return day.hour.filter { time in
+            Date().timeIntervalSince1970 + 600 < time.epoch
         }
     }
 }

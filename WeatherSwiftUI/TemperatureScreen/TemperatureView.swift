@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct TemperatureView: View {
+    
+    var hours: [Hour]
+    
     var body: some View {
-        Text("Hello, World!")
+        ZStack {
+            Image(.day)
+                .resizable()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
+            List(hours, id: \.epoch) { hour in
+                TemperatureRow(hour: hour)
+            }.padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+            .listStyle(.plain)
+        }
     }
 }
 
 #Preview {
-    TemperatureView()
+    TemperatureView(hours: hours)
 }

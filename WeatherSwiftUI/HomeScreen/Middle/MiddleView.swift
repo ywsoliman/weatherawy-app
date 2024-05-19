@@ -17,9 +17,12 @@ struct MiddleView: View {
                 .bold()
             Divider()
                 .background(Color.black)
-            ForEach(forecast.forecastday, id: \.dateEpoch) { day in
+            ForEach(Array(forecast.forecastday.enumerated()), id: \.element.dateEpoch) { index, day in
+                
+                let label = (index == 0) ? "Today" : dayOfWeek(from: day.dateEpoch)
+                
                 NavigationLink(destination: TemperatureView()) {
-                    ForecastRow(currentForecast: day)
+                    ForecastRow(currentForecast: day, dayLabel: label)
                 }
                 .buttonStyle(PlainButtonStyle())
             }

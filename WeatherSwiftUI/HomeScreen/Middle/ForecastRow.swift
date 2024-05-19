@@ -11,6 +11,7 @@ import Kingfisher
 struct ForecastRow: View {
     
     var currentForecast: ForecastDay
+    var dayLabel: String
     
     private var conditionIconURL: URL? {
         URL(string: "https:\(currentForecast.day.condition.icon)")
@@ -23,7 +24,7 @@ struct ForecastRow: View {
     var body: some View {
         VStack {
             HStack {
-                Text(dayOfWeek(from: currentForecast.dateEpoch))
+                Text(dayLabel)
                 Spacer()
                 if let conditionIconURL {
                     KFImage(conditionIconURL)
@@ -40,5 +41,5 @@ struct ForecastRow: View {
 }
 
 #Preview {
-    ForecastRow(currentForecast: forecastDay)
+    ForecastRow(currentForecast: forecastDay, dayLabel: "Today")
 }

@@ -16,7 +16,7 @@ struct Weather: Codable {
 
 // MARK: - Current
 struct Current: Codable {
-    var temp: Int
+    var temp: Double
     var condition: Condition
     var pressure, humidity: Int
     var feelslike: Double
@@ -86,11 +86,12 @@ struct Location: Codable {
     var name, country: String
     var lat, lon: Double
     var tzID, localtime: String
+    var localEpoch: TimeInterval
 
     enum CodingKeys: String, CodingKey {
-        case name, country, lat, lon
         case tzID = "tz_id"
-        case localtime
+        case localEpoch = "localtime_epoch"
+        case name, country, lat, lon, localtime
     }
 }
 
@@ -131,7 +132,8 @@ let location = Location(
     lat: 30.0131363,
     lon: 31.1852572,
     tzID: "Africa/Cairo",
-    localtime: "2024-05-18 12:00"
+    localtime: "2024-05-18 12:00",
+    localEpoch: 1715990400
 )
 
 // Creating an instance of Weather

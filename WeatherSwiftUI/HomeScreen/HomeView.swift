@@ -21,15 +21,48 @@ struct HomeView: View {
                         MiddleView(forecast: weather.forecast)
                         BottomView(current: weather.current)
                     } else {
-                        LoadingView()
+                        if homeViewModel.showNoLocationAlert {
+                            Text("Location isn't enabled")
+                        } else {
+                            LoadingView()
+                        }
                     }
                 }
                 .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
             }
+            .alert(isPresented: $homeViewModel.showNoLocationAlert) {
+                locaitonIsDisabledAlert()
+            }
         }
+        
         .foregroundStyle(isTimeBetween5AMAnd6PM() ? Color.black : Color.white)
-        .onAppear { homeViewModel.checkIfLocationEnabled() }
+        .onAppear { 
+            print("on appear")
+            homeViewModel.checkIfLocationEnabled() }
     }
+    
+    func locaitonIsDisabledAlert() -> Alert {
+        return Alert(
+            title: Text("Location Services Disabled"),
+            message: Text("Please enable location services in Settings."),
+            primaryButton: .default(Text("Settings"), action: {
+                openAppSettings()
+            }),
+            secondaryButton: .cancel({
+                homeViewModel.showNoLocationAlert = true
+            })
+        )
+    }
+    
+    func openAppSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        
+    }
+    
 }
 
 #Preview {

@@ -11,6 +11,7 @@ import CoreLocation
 final class HomeViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @Published var weather: Weather?
+    @Published var showNoLocationAlert = false
     private var service: APIServiceProtocol
     private var locationManager: CLLocationManager?
     
@@ -39,12 +40,8 @@ final class HomeViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
     }
     
     func checkIfLocationEnabled() {
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager = CLLocationManager()
-            locationManager!.delegate = self
-        } else {
-            print("location services is not enabled")
-        }
+        locationManager = CLLocationManager()
+        locationManager!.delegate = self
     }
     
     private func checkLocationAuthorization() {
@@ -57,8 +54,9 @@ final class HomeViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
         case .restricted:
             print("restricted")
         case .denied:
-            print("denied")
+            showNoLocationAlert = true
         case .authorizedAlways, .authorizedWhenInUse:
+            showNoLocationAlert = false
             if let location = locationManager.location {
                 fetchWeather(
                     lat: location.coordinate.latitude,

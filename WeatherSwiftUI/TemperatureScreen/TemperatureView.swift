@@ -15,10 +15,7 @@ struct TemperatureView: View {
     
     var body: some View {
         ZStack {
-            Image(isTimeBetween5AMAnd6PM() ? .day : .night)
-                .resizable()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea()
+            BackgroundImage()
             List(hours, id: \.epoch) { hour in
                 TemperatureRow(hour: hour)
             }.padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))

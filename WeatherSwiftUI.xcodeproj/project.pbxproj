@@ -26,6 +26,7 @@
 		BEBEC4A82BF9047000C3AC96 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEC4A72BF9047000C3AC96 /* DateUtil.swift */; };
 		BEBEC4AA2BF912FB00C3AC96 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEC4A92BF912FB00C3AC96 /* TemperatureView.swift */; };
 		BED2F04D2BF93E860089D6CD /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED2F04C2BF93E860089D6CD /* BottomView.swift */; };
+		BEE437752BFBBD4600018192 /* BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE437742BFBBD4600018192 /* BackgroundImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		BEBEC4A72BF9047000C3AC96 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		BEBEC4A92BF912FB00C3AC96 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		BED2F04C2BF93E860089D6CD /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		BEE437742BFBBD4600018192 /* BackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				BE92375B2BF8CF2F00149311 /* Constants.swift */,
 				BEBEC4A12BF8F16200C3AC96 /* LoadingView.swift */,
 				BEBEC4A72BF9047000C3AC96 /* DateUtil.swift */,
+				BEE437742BFBBD4600018192 /* BackgroundImage.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				BEBEC4A42BF8FEA000C3AC96 /* MiddleView.swift in Sources */,
 				BE9237602BF8D7E600149311 /* APIService.swift in Sources */,
 				BEBEC4A82BF9047000C3AC96 /* DateUtil.swift in Sources */,
+				BEE437752BFBBD4600018192 /* BackgroundImage.swift in Sources */,
 				BE9237442BF8C5E000149311 /* WeatherSwiftUIApp.swift in Sources */,
 				BEBEC4A62BF8FEB800C3AC96 /* ForecastRow.swift in Sources */,
 			);

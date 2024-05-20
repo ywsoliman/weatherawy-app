@@ -33,7 +33,7 @@ struct MiddleView: View {
     
     func removePassedHours(_ day: ForecastDay) -> [Hour] {
         return day.hour.filter { time in
-            Date().timeIntervalSince1970 + 600 < time.epoch
+            Date().timeIntervalSince1970 - 3000 < time.epoch
         }
     }
 }

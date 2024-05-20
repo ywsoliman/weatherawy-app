@@ -12,7 +12,6 @@ struct WeatherSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .font(.system(size: 24))
         }
     }
 }

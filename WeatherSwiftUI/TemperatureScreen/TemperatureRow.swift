@@ -26,7 +26,7 @@ struct TemperatureRow: View {
                 KFImage(conditionIconURL)
             }
             Spacer()
-            Text(String(format: "%.1f°", hour.temp))
+            Text(String(format: "%.1f°C", hour.temp))
             Spacer()
         }
         .listRowBackground(Color.clear)

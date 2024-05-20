@@ -17,7 +17,7 @@ struct TopView: View {
     }
     
     private var temperatureText: String {
-        "\(weather.current.temp)°"
+        "\(Int(weather.current.temp))°C"
     }
     
     private var conditionText: String {
@@ -40,8 +40,11 @@ struct TopView: View {
         VStack {
             Image(systemName: "mappin")
             Text(locationText)
+                .multilineTextAlignment(.center)
+                .font(.system(size: 24))
                 .bold()
             Text(temperatureText)
+                .font(.system(size: 24))
                 .bold()
             Text(conditionText)
             HStack {

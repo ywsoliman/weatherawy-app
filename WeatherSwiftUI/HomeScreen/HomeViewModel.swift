@@ -21,9 +21,6 @@ final class HomeViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
     
     func fetchWeather(lat: Double, lon: Double) {
         
-        print("Lat = \(lat)")
-        print("Lon = \(lon)")
-        
         service.fetch(lat: lat, lon: lon) { [weak self] response, error in
             
             DispatchQueue.main.async {

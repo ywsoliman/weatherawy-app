@@ -37,7 +37,6 @@ struct HomeView: View {
         
         .foregroundStyle(isTimeBetween5AMAnd6PM() ? Color.black : Color.white)
         .onAppear { 
-            print("on appear")
             homeViewModel.checkIfLocationEnabled() }
     }
     

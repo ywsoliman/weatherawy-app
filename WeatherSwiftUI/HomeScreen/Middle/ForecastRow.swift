@@ -18,7 +18,7 @@ struct ForecastRow: View {
     }
     
     private var minAndMaxTemp: String {
-        "\(currentForecast.day.mintemp)° - \(currentForecast.day.maxtemp)°"
+        "\(currentForecast.day.mintemp)° - \(currentForecast.day.maxtemp)°C"
     }
     
     var body: some View {

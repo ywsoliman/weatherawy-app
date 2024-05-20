@@ -17,10 +17,16 @@ func dayOfWeek(from epoch: TimeInterval) -> String {
 
 func convertEpochToTime(epoch: TimeInterval) -> String {
     let date = Date(timeIntervalSince1970: epoch)
-    let formatter = DateFormatter()
-    formatter.dateFormat = "h a"
-    formatter.amSymbol = "AM"
-    formatter.pmSymbol = "PM"
-    formatter.locale = Locale.current
-    return formatter.string(from: date)
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "h a"
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+    let timeString = dateFormatter.string(from: date)
+    return timeString
+}
+
+func isTimeBetween5AMAnd6PM() -> Bool {
+    let date = Date()
+    let calendar = Calendar.current
+    let hour = calendar.component(.hour, from: date)
+    return hour >= 5 && hour < 18
 }

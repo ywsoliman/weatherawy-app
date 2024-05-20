@@ -11,6 +11,7 @@ import Kingfisher
 struct TemperatureRow: View {
     
     var hour: Hour
+    var currentHour: String
     
     private var conditionIconURL: URL? {
         URL(string: "https:\(hour.condition.icon)")
@@ -19,7 +20,7 @@ struct TemperatureRow: View {
     var body: some View {
         HStack {
             Spacer()
-            Text(convertEpochToTime(epoch: hour.epoch))
+            Text(currentHour)
             Spacer()
             if let conditionIconURL {
                 KFImage(conditionIconURL)
@@ -33,5 +34,5 @@ struct TemperatureRow: View {
 }
 
 #Preview {
-    TemperatureRow(hour: hour1)
+    TemperatureRow(hour: hour1, currentHour: "12 PM")
 }

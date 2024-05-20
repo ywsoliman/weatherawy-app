@@ -12,14 +12,23 @@ struct TemperatureView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var hours: [Hour]
+    var isToday: Bool
     
     var body: some View {
         ZStack {
             BackgroundImage()
-            List(hours, id: \.epoch) { hour in
-                TemperatureRow(hour: hour)
-            }.padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                .listStyle(.plain)
+            if hours.isEmpty {
+                VStack {
+                    Text("No more data available")
+                    Text("Day is almost over!")
+                }
+            } else {
+                List(hours.indices, id: \.self) { index in
+                    let hour = (isToday && index == 0) ? "Now" : convertEpochToTime(epoch: hours[index].epoch)
+                    TemperatureRow(hour: hours[index], currentHour: hour)
+                }.padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                    .listStyle(.plain)
+            }
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -39,5 +48,5 @@ struct TemperatureView: View {
 }
 
 #Preview {
-    TemperatureView(hours: hours)
+    TemperatureView(hours: hours, isToday: false)
 }

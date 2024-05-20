@@ -20,9 +20,10 @@ struct MiddleView: View {
                 .background(Color.black)
             ForEach(Array(forecast.forecastday.enumerated()), id: \.element.dateEpoch) { index, day in
                 
+                let isToday = (index == 0)
                 let label = (index == 0) ? "Today" : dayOfWeek(from: day.dateEpoch)
                 let hours: [Hour] = (index == 0) ? removePassedHours(day) : day.hour
-                NavigationLink(destination: TemperatureView(hours: hours)) {
+                NavigationLink(destination: TemperatureView(hours: hours, isToday: isToday)) {
                     ForecastRow(currentForecast: day, dayLabel: label)
                 }
                 .buttonStyle(PlainButtonStyle())
